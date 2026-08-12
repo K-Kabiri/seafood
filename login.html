@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>ورود | رستوران دریا</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/layout.css"/>
+    <link rel="stylesheet" href="css/auth.css"/>
+</head>
+<body data-page="login">
+
+<nav class="site-nav" id="site-nav"></nav>
+
+<main class="auth-page">
+
+    <!-- Right section -->
+    <div class="auth-brand">
+        <div class="brand-emoji">
+            <img src="images/login_picture.png" alt="login">
+        </div>
+        <h2 class="brand-title">خوش آمدید به<br/><span>رستوران دریا</span></h2>
+        <p class="brand-desc">با ورود به حساب کاربری، سفارش‌های خود را آسان‌تر مدیریت کنید و از تخفیف‌های ویژه بهره‌مند شوید.</p>
+        <div class="brand-stats">
+            <div class="brand-stat">
+                <span class="brand-stat-num">۱۲<sup>+</sup></span>
+                <div class="brand-stat-label">سال تجربه</div>
+            </div>
+            <div class="brand-stat">
+                <span class="brand-stat-num">۸۵<sup>+</sup></span>
+                <div class="brand-stat-label">آیتم منو</div>
+            </div>
+            <div class="brand-stat">
+                <span class="brand-stat-num">۴.۹<sup>★</sup></span>
+                <div class="brand-stat-label">امتیاز</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Left section (form) -->
+    <div class="auth-form-side">
+        <div class="auth-box">
+
+            <!-- Step indicator -->
+            <div class="step-indicator">
+                <div class="step-dot current">۱</div>
+                <div class="step-line"></div>
+                <span class="step-label">ورود</span>
+                <div class="step-line"></div>
+                <div class="step-dot">✓</div>
+            </div>
+
+            <!-- first step -->
+            <div class="step active" id="step1">
+                <h1>ورود به حساب</h1>
+                <p class="auth-sub">نام کاربری و رمز عبور خود را وارد کنید.</p>
+
+                <div class="auth-form-group">
+                    <label for="usernameInput">نام کاربری</label>
+                    <div class="auth-input-wrap">
+                        <input class="auth-input" id="usernameInput" type="text"
+                               placeholder="نام کاربری خود را وارد کنید"
+                               autocomplete="username" dir="ltr"/>
+                    </div>
+                    <p class="auth-error-msg" id="usernameError"></p>
+                </div>
+
+                <div class="auth-form-group">
+                    <label for="passwordInput">رمز عبور</label>
+                    <div class="auth-input-wrap">
+                        <input class="auth-input" id="passwordInput" type="password"
+                               placeholder="رمز عبور خود را وارد کنید"
+                               autocomplete="current-password" dir="ltr"/>
+                    </div>
+                    <p class="auth-error-msg" id="passwordError"></p>
+                </div>
+
+                <p class="auth-error-msg" id="loginError" style="text-align:center; margin-bottom:.75rem;"></p>
+
+                <button class="auth-submit" id="loginBtn">
+                    ورود
+                </button>
+
+                <div class="auth-switch">
+                    حساب ندارید؟
+                    <a href="register.html">ثبت‌نام کنید</a>
+                </div>
+            </div>
+
+            <!-- second step -->
+            <div class="step" id="step2">
+                <div class="auth-success show">
+                    <div class="success-icon-big">🎉</div>
+                    <h2>خوش آمدید!</h2>
+                    <p>ورود شما با موفقیت انجام شد.<br/>در حال انتقال به صفحه اصلی...</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+<!-- /footer -->
+<script src="js/auth.js"></script>
+<script src="js/layout.js"></script>
+</body>
+</html>

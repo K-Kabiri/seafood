@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>ارتباط با ما | رستوران دریا</title>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Vazirmatn:wght@300;400;700;900&display=swap"
+            rel="stylesheet"/>
+    <link rel="stylesheet" href="./css/layout.css"/>
+    <link rel="stylesheet" href="css/contact_us.css"/>
+</head>
+<body>
+
+<!-- ******************** Header ******************** -->
+<header>
+    <!-- logo -->
+    <a href="index.html" class="logo">
+        <div class="logo-icon">🌊</div>
+        <span class="logo-text">دریا</span>
+    </a>
+
+    <!-- nav menu -->
+    <nav>
+        <ul>
+            <li><a href="index.html">صفحه اصلی</a></li>
+            <li><a href="menu.html">منو</a></li>
+            <li><a href="about_us.html">درباره ما</a></li>
+            <li><a href="contact_us.html" class="active">ارتباط با ما</a></li>
+        </ul>
+    </nav>
+
+    <!-- account & cart icons -->
+    <div class="header-icons">
+        <a href="#reserve" class="btn-reserve">رزرو میز</a>
+        <a href="cart.html" class="icon-btn" aria-label="سبد خرید">
+            <svg viewBox="0 0 24 24">
+                <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+                <line x1="3" y1="6" x2="21" y2="6"/>
+                <path d="M16 10a4 4 0 01-8 0"/>
+            </svg>
+            <span class="cart-badge">۰</span>
+        </a>
+
+        <a href="login.html" class="icon-btn" aria-label="حساب کاربری">
+            <svg viewBox="0 0 24 24">
+                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+            </svg>
+        </a>
+    </div>
+
+    <!-- hamburger button -->
+    <button class="hamburger" id="hamburgerBtn" aria-label="باز کردن منو" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+</header>
+<!-- /header -->
+
+<!-- drawer -->
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <!-- logo -->
+    <div class="mobile-nav-header">
+        <div class="mobile-nav-logo">
+            <div class="logo-icon">🌊</div>
+            <span class="logo-text">دریا</span>
+        </div>
+        <button class="btn-close-nav" onclick="closeMobileNav()" aria-label="بستن منو">&#x2715;</button>
+    </div>
+
+    <!-- menu items -->
+    <ul>
+        <li><a href="index.html">صفحه اصلی</a></li>
+        <li><a href="menu.html">منو</a></li>
+        <li><a href="about_us.html">درباره ما</a></li>
+        <li class="active-item"><a href="contact_us.html" onclick="closeMobileNav()">ارتباط با ما</a></li>
+    </ul>
+
+    <div class="drawer-reserve">
+        <a href="#reserve" class="btn-reserve" onclick="closeMobileNav()"
+           style="display:block;text-align:center;padding:.75rem 1.5rem;">
+            رزرو میز
+        </a>
+    </div>
+</div>
+<!-- /drawer-->
+
+<!-- overlay -->
+<div class="nav-overlay" id="navOverlay" onclick="closeMobileNav()"></div>
+
+
+<!-- ******************** HERO ******************** -->
+<section class="contact-hero">
+    <h1>در تماس <span style="color: var(--teal);">باشیم</span></h1>
+    <p>هر سوال، پیشنهاد یا رزرو میز — خوشحال می‌شیم که صدای شما رو بشنویم.</p>
+</section>
+
+<!-- ******************** Info cards ******************** -->
+<section class="info-section">
+    <div class="section-label" style="max-width:1100px;margin:0 auto;">راه‌های ارتباطی</div>
+    <div class="info-cards">
+        <div class="info-card">
+            <div class="info-icon">📞</div>
+            <h3>تلفن تماس</h3>
+            <a href="tel:+983133445566">۰۳۱-۳۳۴۴۵۵۶۶</a>
+            <a href="tel:+983133445567">۰۳۱-۳۳۴۴۵۵۶۷</a>
+        </div>
+        <div class="info-card">
+            <div class="info-icon">📧</div>
+            <h3>ایمیل</h3>
+            <a href="mailto:info@darya-restaurant.ir">info@darya-restaurant.ir</a>
+            <a href="mailto:reserve@darya-restaurant.ir">reserve@darya-restaurant.ir</a>
+        </div>
+        <div class="info-card">
+            <div class="info-icon">📍</div>
+            <h3>آدرس</h3>
+            <p>اصفهان، چهارباغ بالا</p>
+            <p>نرسیده به میدان آزادی</p>
+        </div>
+        <div class="info-card">
+            <div class="info-icon">🅿️</div>
+            <h3>پارکینگ</h3>
+            <p>پارکینگ اختصاصی رایگان</p>
+            <p>ظرفیت ۵۰ خودرو</p>
+        </div>
+    </div>
+</section>
+
+<!-- ******************** Hours & Social ******************** -->
+<section class="hours-section">
+    <div class="hours-grid">
+        <!-- Hours -->
+        <div class="hours-card">
+            <h3>🕐 ساعات کاری</h3>
+            <div class="hours-row">
+                <span class="hours-day">شنبه تا چهارشنبه</span>
+                <span class="hours-time">۱۲:۰۰ — ۲۳:۰۰</span>
+            </div>
+            <div class="hours-row">
+                <span class="hours-day">پنجشنبه و جمعه</span>
+                <span class="hours-time">۱۲:۰۰ — ۰۰:۰۰</span>
+            </div>
+            <div class="hours-row">
+                <span class="hours-day">تعطیلات رسمی</span>
+                <span class="hours-time">۱۴:۰۰ — ۲۲:۰۰</span>
+            </div>
+        </div>
+
+        <!-- Social -->
+        <div class="social-card">
+            <h3>ما را در شبکه‌های اجتماعی دنبال کنید</h3>
+            <p>از آخرین غذاها، تخفیف‌ها و رویدادهای رستوران با خبر بمانید</p>
+            <div class="social-links">
+                <a href="#" class="social-link">
+                    <div class="social-link-icon">
+                        <img src="images/whatsapp.svg" alt="واتساپ">
+                    </div>
+                    <div class="social-link-info">
+                        <span>واتساپ</span>
+                        <small>پاسخگویی ۹ تا ۲۲</small>
+                    </div>
+                </a>
+                <a href="#" class="social-link">
+                    <div class="social-link-icon">
+                        <img src="images/instagram.svg" alt="اینستاگرام">
+                    </div>
+                    <div class="social-link-info">
+                        <span>اینستاگرام</span>
+                        <small>@darya_restaurant</small>
+                    </div>
+                </a>
+                <a href="#" class="social-link">
+                    <div class="social-link-icon">
+                        <img src="images/telegram.svg" alt="تلگرام">
+                    </div>
+                    <div class="social-link-info">
+                        <span>تلگرام</span>
+                        <small>@darya_official</small>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ******************** Map ******************** -->
+<section class="map-section">
+    <div class="map-section-inner">
+        <div class="section-label">موقعیت ما</div>
+        <h2>ما را روی نقشه پیدا کنید</h2>
+        <div class="map-wrapper">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d420.04029203535066!2d51.6648753956497!3d32.624238535105654!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1782033353777!5m2!1sen!2s"
+                    width= 100%
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
+</section>
+
+<!-- ******************** Reservation form ******************** -->
+<section class="reserve-section" id="reserve">
+    <div class="section-label">رزرو میز</div>
+    <h2>جای خود را رزرو کنید</h2>
+    <p>میز مورد نظر خود را از پیش رزرو کنید و بدون انتظار از بهترین تجربه دریا لذت ببرید</p>
+
+    <div class="reserve-box">
+        <!-- The form -->
+        <div id="reserveForm">
+            <div class="form-grid">
+                <!-- Name -->
+                <div class="form-group">
+                    <label>نام و نام خانوادگی *</label>
+                    <input type="text" id="name" placeholder="علی محمدی"/>
+                </div>
+
+                <!-- Phone -->
+                <div class="form-group">
+                    <label>شماره تماس *</label>
+                    <input type="tel" id="phone" placeholder="۰۹۱۲۳۴۵۶۷۸۹"/>
+                </div>
+
+                <!-- Date -->
+                <div class="form-group">
+                    <label>تاریخ رزرو *</label>
+                    <input type="date" id="date"/>
+                </div>
+
+                <!-- Guests -->
+                <div class="form-group">
+                    <label>تعداد نفرات *</label>
+                    <select id="guests">
+                        <option value="">انتخاب کنید</option>
+                        <option value="1">۱ نفر</option>
+                        <option value="2">۲ نفر</option>
+                        <option value="3">۳ نفر</option>
+                        <option value="4">۴ نفر</option>
+                        <option value="5">۵ نفر</option>
+                        <option value="6">۶ نفر</option>
+                        <option value="more">بیشتر از ۶ نفر</option>
+                    </select>
+                </div>
+
+                <!-- Time slot -->
+                <div class="form-group full">
+                    <label>ساعت ترجیحی *</label>
+                    <div class="time-slots" id="timeSlots">
+                        <button type="button" class="time-slot" onclick="selectTime(this)">۱۲:۰۰</button>
+                        <button type="button" class="time-slot" onclick="selectTime(this)">۱۳:۰۰</button>
+                        <button type="button" class="time-slot" onclick="selectTime(this)">۱۴:۰۰</button>
+                        <button type="button" class="time-slot" onclick="selectTime(this)">۱۸:۰۰</button>
+                        <button type="button" class="time-slot" onclick="selectTime(this)">۱۹:۰۰</button>
+                        <button type="button" class="time-slot" onclick="selectTime(this)">۲۰:۰۰</button>
+                        <button type="button" class="time-slot" onclick="selectTime(this)">۲۱:۰۰</button>
+                        <button type="button" class="time-slot" onclick="selectTime(this)">۲۲:۰۰</button>
+                    </div>
+                </div>
+
+                <!-- Section preference -->
+                <div class="form-group">
+                    <label>بخش مورد نظر</label>
+                    <select id="section">
+                        <option value="">فرقی نمی‌کند</option>
+                        <option value="indoor">فضای داخلی</option>
+                        <option value="outdoor">فضای باز</option>
+                        <option value="vip">سالن VIP</option>
+                        <option value="family">بخش خانوادگی</option>
+                    </select>
+                </div>
+
+                <!-- Occasion -->
+                <div class="form-group">
+                    <label>مناسبت (اختیاری)</label>
+                    <select id="occasion">
+                        <option value="">بدون مناسبت</option>
+                        <option value="birthday">جشن تولد</option>
+                        <option value="anniversary">سالگرد ازدواج</option>
+                        <option value="business">جلسه کاری</option>
+                        <option value="family">گردهمایی خانوادگی</option>
+                    </select>
+                </div>
+
+                <!-- Notes -->
+                <div class="form-group full">
+                    <label>توضیحات یا درخواست خاص</label>
+                    <textarea id="notes"
+                              placeholder="مثلاً: آلرژی غذایی دارم، می‌خوام کنار پنجره بشینم، کیک تولد سفارش بدم..."></textarea>
+                </div>
+            </div>
+
+            <button type="button" class="btn-submit" onclick="submitReserve()">
+                ثبت رزرو
+            </button>
+        </div>
+
+        <!-- Success message (hidden initially) -->
+        <div class="success-msg" id="successMsg">
+            <div class="success-icon">✅</div>
+            <h3>رزرو شما ثبت شد!</h3>
+            <p>در اسرع وقت با شما تماس می‌گیریم تا رزرو را نهایی کنیم.<br/>با تشکر از انتخاب رستوران دریا 🌊</p>
+            <button type="button" class="btn-new-reservation" onclick="resetForm()">رزرو جدید</button>
+        </div>
+    </div>
+</section>
+
+<!-- ******************** Footer ******************** -->
+<footer class="site-footer">
+    <div class="footer-inner">
+        <!-- information -->
+        <div class="footer-col footer-about">
+            <div class="footer-logo">
+                <div class="logo-icon">🌊</div>
+                <span class="logo-text">دریا</span>
+            </div>
+            <p class="footer-desc">
+                تازه‌ترین آبزیان از اعماق دریا، با دستپخت آشپزان مجرب و
+                طعمی فراموش‌نشدنی در کنار شما.
+            </p>
+            <div class="footer-social">
+                <a href="#" class="footer-social-icon">
+                    <img src="images/instagram.svg" alt="اینستاگرام"/>
+                </a>
+                <a href="#" class="footer-social-icon">
+                    <img src="images/telegram.svg" alt="تلگرام"/>
+                </a>
+                <a href="#" class="footer-social-icon">
+                    <img src="images/whatsapp.svg" alt="واتساپ"/>
+                </a>
+            </div>
+        </div>
+        <!-- contact -->
+        <div class="footer-col">
+            <h3 class="footer-title">راه‌های ارتباطی</h3>
+            <div class="footer-info-item">
+                <i class="ti ti-phone" aria-hidden="true"></i>
+                <span>۰۳۱-۳۳۴۴۵۵۶۶</span>
+            </div>
+            <div class="footer-info-item">
+                <i class="ti ti-mail" aria-hidden="true"></i>
+                <span>info@darya-restaurant.ir</span>
+            </div>
+            <div class="footer-info-item">
+                <i class="ti ti-map-pin" aria-hidden="true"></i>
+                <span>اصفهان، چهارباغ بالا</span>
+            </div>
+        </div>
+        <!-- times -->
+        <div class="footer-col">
+            <h3 class="footer-title">ساعات کاری</h3>
+            <div class="footer-hours-item">
+                <span>شنبه تا چهارشنبه</span>
+                <span>۱۲ - ۲۳</span>
+            </div>
+            <div class="footer-hours-item">
+                <span>پنج‌شنبه و جمعه</span>
+                <span>۱۲ - ۲۴</span>
+            </div>
+            <div class="footer-hours-item highlight">
+                <span>تعطیلات رسمی</span>
+                <span>۱۴ - ۲۲</span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © ۱۴۰۳ رستوران دریا — تمامی حقوق محفوظ است
+    </div>
+</footer>
+<!-- /footer -->
+<script src="js/auth.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/contact_us.js"></script>
+</body>
+</html>

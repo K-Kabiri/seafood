@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>ثبت‌نام | رستوران دریا</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/layout.css"/>
+    <link rel="stylesheet" href="css/auth.css"/>
+</head>
+<body data-page="register">
+
+<nav class="site-nav" id="site-nav"></nav>
+
+<main class="auth-page">
+    <!-- right section -->
+    <div class="auth-brand">
+        <div class="brand-emoji">
+            <img src="images/Signup_picture.png" alt="login">
+        </div>
+        <h2 class="brand-title">به خانواده<br/><span>دریا</span> بپیوندید</h2>
+        <p class="brand-desc">با ثبت‌نام در رستوران دریا، از مزایای ویژه اعضا مثل تخفیف‌های اختصاصی و دسترسی به تاریخچه سفارش‌ها بهره‌مند شوید.</p>
+        <div class="brand-stats">
+            <div class="brand-stat">
+                <span class="brand-stat-num">۵۰K<sup>+</sup></span>
+                <div class="brand-stat-label">عضو فعال</div>
+            </div>
+            <div class="brand-stat">
+                <span class="brand-stat-num"><sup>٪</sup>۱۰</span>
+                <div class="brand-stat-label">تخفیف خوش‌آمد</div>
+            </div>
+            <div class="brand-stat">
+                <span class="brand-stat-num">۴.۹<sup>★</sup></span>
+                <div class="brand-stat-label">رضایت اعضا</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- left section (form) -->
+    <div class="auth-form-side">
+        <div class="auth-box">
+
+            <!-- Step indicator -->
+            <div class="step-indicator">
+                <div class="step-dot current">۱</div>
+                <div class="step-line"></div>
+                <span class="step-label">اطلاعات</span>
+                <div class="step-line"></div>
+                <div class="step-dot">✓</div>
+            </div>
+
+            <!-- first step -->
+            <div class="step active" id="step1">
+                <h1>ثبت‌نام</h1>
+                <p class="auth-sub">اطلاعات خود را وارد کنید تا حساب کاربری برایتان ایجاد شود.</p>
+
+                <div class="auth-form-group">
+                    <label for="usernameInput">نام کاربری</label>
+                    <div class="auth-input-wrap">
+                        <input class="auth-input" id="usernameInput" type="text"
+                               placeholder="ali_ahmadi" autocomplete="username" dir="ltr"/>
+                    </div>
+                    <p class="auth-error-msg" id="usernameError"></p>
+                </div>
+
+                <div class="auth-form-group">
+                    <label for="firstNameInput">نام و نام خانوادگی</label>
+                    <div class="auth-input-wrap">
+                        <input class="auth-input" id="firstNameInput" type="text"
+                               placeholder="علی احمدی" autocomplete="given-name"/>
+                    </div>
+                    <p class="auth-error-msg" id="firstNameError"></p>
+                </div>
+
+                <div class="auth-form-group">
+                    <label for="phoneInput">شماره تماس</label>
+                    <div class="auth-input-wrap">
+                        <input class="auth-input" id="phoneInput" type="tel"
+                               inputmode="numeric" placeholder="09112345678"
+                               maxlength="11" autocomplete="tel"/>
+                    </div>
+                    <p class="auth-error-msg" id="phoneError"></p>
+                </div>
+
+                <div class="auth-form-group">
+                    <label for="passwordInput">رمز عبور</label>
+                    <div class="auth-input-wrap">
+                        <input class="auth-input" id="passwordInput" type="password"
+                               placeholder="حداقل ۶ کاراکتر" autocomplete="new-password" dir="ltr"/>
+                    </div>
+                    <p class="auth-error-msg" id="passwordError"></p>
+                </div>
+
+                <div class="auth-form-group">
+                    <label for="confirmInput">تکرار رمز عبور</label>
+                    <div class="auth-input-wrap">
+                        <input class="auth-input" id="confirmInput" type="password"
+                               placeholder="رمز عبور را دوباره وارد کنید" autocomplete="new-password" dir="ltr"/>
+                    </div>
+                    <p class="auth-error-msg" id="confirmError"></p>
+                </div>
+
+                <p class="auth-error-msg" id="loginError" style="text-align:center; margin-bottom:.75rem;"></p>
+
+                <button class="auth-submit" id="registerBtn">
+                    ثبت‌نام
+                </button>
+
+                <div class="auth-switch">
+                    قبلاً ثبت‌نام کرده‌اید؟
+                    <a href="login.html">وارد شوید</a>
+                </div>
+            </div>
+
+            <!-- second step -->
+            <div class="step" id="step2">
+                <div class="auth-success show">
+                    <div class="success-icon-big">🎊</div>
+                    <h2>ثبت‌نام موفق!</h2>
+                    <p>خوش آمدید! حساب کاربری شما ایجاد شد.<br/>در حال انتقال به صفحه اصلی...</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="js/auth.js"></script>
+<script src="js/layout.js"></script>
+</body>
+</html>

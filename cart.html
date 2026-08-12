@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>سبد خرید | رستوران دریا</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/layout.css"/>
+    <link rel="stylesheet" href="css/cart.css"/>
+</head>
+<body>
+
+<!-- ******************** Header ******************** -->
+<header>
+    <a href="index.html" class="logo">
+        <div class="logo-icon">🌊</div>
+        <span class="logo-text">دریا</span>
+    </a>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">صفحه اصلی</a></li>
+            <li><a href="menu.html">منو</a></li>
+            <li><a href="about_us.html">درباره ما</a></li>
+            <li><a href="contact_us.html">ارتباط با ما</a></li>
+        </ul>
+    </nav>
+
+    <div class="header-icons">
+        <a href="contact_us.html#reserve" class="btn-reserve">رزرو میز</a>
+        <a href="cart.html" class="icon-btn" aria-label="سبد خرید">
+            <svg viewBox="0 0 24 24">
+                <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+                <line x1="3" y1="6" x2="21" y2="6"/>
+                <path d="M16 10a4 4 0 01-8 0"/>
+            </svg>
+            <span class="cart-badge">۰</span>
+        </a>
+        <a href="login.html" class="icon-btn" aria-label="حساب کاربری">
+            <svg viewBox="0 0 24 24">
+                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+            </svg>
+        </a>
+    </div>
+
+    <button class="hamburger" id="hamburgerBtn" aria-label="باز کردن منو" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
+</header>
+
+<!-- drawer -->
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <div class="mobile-nav-header">
+        <div class="mobile-nav-logo">
+            <div class="logo-icon">🌊</div>
+            <span class="logo-text">دریا</span>
+        </div>
+        <button class="btn-close-nav" onclick="closeMobileNav()" aria-label="بستن منو">&#x2715;</button>
+    </div>
+    <ul>
+        <li><a href="index.html" onclick="setActiveNav(this); closeMobileNav()">صفحه اصلی</a></li>
+        <li><a href="menu.html" onclick="setActiveNav(this); closeMobileNav()">منو</a></li>
+        <li><a href="about_us.html" onclick="setActiveNav(this); closeMobileNav()">درباره ما</a></li>
+        <li><a href="contact_us.html" onclick="setActiveNav(this); closeMobileNav()">ارتباط با ما</a></li>
+    </ul>
+    <div class="drawer-reserve">
+        <a href="contact_us.html#reserve" class="btn-reserve" onclick="closeMobileNav()">رزرو میز</a>
+    </div>
+    <div class="mobile-nav-icons">
+        <a href="cart.html" class="mobile-icon-item active-item" onclick="closeMobileNav()">
+            <div class="mobile-icon-wrap">
+                <svg viewBox="0 0 24 24">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 01-8 0"/>
+                </svg>
+                <span class="cart-badge-mobile">۰</span>
+            </div>
+            <span>سبد خرید</span>
+        </a>
+        <a href="login.html" class="mobile-icon-item" onclick="closeMobileNav()">
+            <div class="mobile-icon-wrap">
+                <svg viewBox="0 0 24 24">
+                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+                </svg>
+            </div>
+            <span>حساب کاربری</span>
+        </a>
+    </div>
+</div>
+<div class="nav-overlay" id="navOverlay" onclick="closeMobileNav()"></div>
+
+<!-- ******************* Hero ******************** -->
+<section class="cart-hero">
+    <div class="cart-hero-inner">
+        <h1>سبد خرید <span>شما</span></h1>
+        <p>آیتم‌های انتخابی خود را مرور کرده و سفارش دهید.</p>
+    </div>
+</section>
+
+<!-- ******************** Cart Content ******************** -->
+<div class="cart-page">
+    <h1>سفارش من</h1>
+    <p class="cart-count" id="cartCount">&nbsp;</p>
+
+    <div class="cart-grid">
+
+        <div>
+            <div class="cart-items" id="cartList"></div>
+
+            <div class="cart-empty" id="cartEmpty">
+                <div class="cart-empty-icon">🛒</div>
+                <h3>سبد خرید شما خالی است</h3>
+                <p>هنوز چیزی اضافه نکرده‌اید. برگردید و از منو انتخاب کنید!</p>
+                <a href="menu.html" class="btn-primary">مشاهده منو</a>
+            </div>
+
+            <div id="continueShopping" style="margin-top:2rem; display:flex; align-items: center; justify-content: center;">
+                <a href="menu.html" class="btn-primary">
+                     ادامه خرید از منو
+                </a>
+            </div>
+        </div>
+
+<!-- ******************** Summary ******************** -->
+        <aside class="cart-summary" id="cartSummary">
+            <h2>خلاصه سفارش</h2>
+
+            <div class="method-section">
+                <span class="method-label">روش تحویل</span>
+                <div class="method-options">
+                    <button class="method-btn active" data-method="dine-in">داخل رستوران</button>
+                    <button class="method-btn" data-method="takeaway">بیرون‌بر</button>
+                    <button class="method-btn" data-method="delivery">ارسال</button>
+                </div>
+            </div>
+
+            <div class="coupon-wrap">
+                <span class="coupon-label">کد تخفیف</span>
+                <div class="coupon-row">
+                    <input class="coupon-input" id="couponInput" type="text"
+                           placeholder="DARYA10" autocomplete="off" spellcheck="false"/>
+                    <button class="coupon-btn" id="couponBtn">اعمال</button>
+                </div>
+                <p class="coupon-msg" id="couponMsg"></p>
+                <p style="font-size:.74rem;color:var(--ocean-deep-light);margin-top:.4rem;">
+                    کدهای آزمایشی: <span style="color:var(--ocean-deep);font-weight:600;">DARYA10 · WELCOME · SEA20</span>
+                </p>
+            </div>
+
+            <div class="price-rows">
+                <div class="price-row">
+                    <span>جمع سبد</span>
+                    <span class="val" id="subtotalVal">—</span>
+                </div>
+                <div class="price-row">
+                    <span>هزینه سرویس</span>
+                    <span class="val" id="serviceFeeVal">رایگان</span>
+                </div>
+                <div class="price-row discount" id="discountRow" style="display:none;">
+                    <span>تخفیف</span>
+                    <span class="val" id="discountVal">—</span>
+                </div>
+                <div class="price-row total">
+                    <span>مبلغ قابل پرداخت</span>
+                    <span class="val" id="totalVal">—</span>
+                </div>
+            </div>
+
+            <button class="checkout-btn" id="checkoutBtn">
+                ثبت و پرداخت سفارش
+            </button>
+        </aside>
+
+    </div>
+</div>
+
+<!-- ******************** Footer ******************** -->
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-col footer-about">
+            <div class="footer-logo">
+                <div class="logo-icon">🌊</div>
+                <span class="logo-text">دریا</span>
+            </div>
+            <p class="footer-desc">تازه‌ترین آبزیان از اعماق دریا، با دستپخت آشپزان مجرب و طعمی فراموش‌نشدنی در کنار شما.</p>
+            <div class="footer-social">
+                <a href="#" class="footer-social-icon"><img src="images/instagram.svg" alt="اینستاگرام"/></a>
+                <a href="#" class="footer-social-icon"><img src="images/telegram.svg" alt="تلگرام"/></a>
+                <a href="#" class="footer-social-icon"><img src="images/whatsapp.svg" alt="واتساپ"/></a>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h3 class="footer-title">راه‌های ارتباطی</h3>
+            <div class="footer-info-item"><span>۰۳۱-۳۳۴۴۵۵۶۶</span></div>
+            <div class="footer-info-item"><span>info@darya-restaurant.ir</span></div>
+            <div class="footer-info-item"><span>اصفهان، چهارباغ بالا</span></div>
+        </div>
+        <div class="footer-col">
+            <h3 class="footer-title">ساعات کاری</h3>
+            <div class="footer-hours-item"><span>شنبه تا چهارشنبه</span><span>۱۲ - ۲۳</span></div>
+            <div class="footer-hours-item"><span>پنج‌شنبه و جمعه</span><span>۱۲ - ۲۴</span></div>
+            <div class="footer-hours-item highlight"><span>تعطیلات رسمی</span><span>۱۴ - ۲۲</span></div>
+        </div>
+    </div>
+    <div class="footer-bottom">© ۱۴۰۳ رستوران دریا — تمامی حقوق محفوظ است</div>
+</footer>
+
+<div class="cart-toast" id="cartToast"></div>
+
+<script src="js/auth.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/cart.js"></script>
+</body>
+</html>

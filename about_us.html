@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>درباره ما | رستوران دریا</title>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Vazirmatn:wght@300;400;700;900&display=swap"
+            rel="stylesheet"/>
+
+    <link rel="stylesheet" href="./css/layout.css" />
+    <link rel="stylesheet" href="css/about_us.css"/>
+</head>
+<body>
+
+<!-- ******************** Header ******************** -->
+<header>
+    <!-- logo -->
+    <a href="index.html" class="logo">
+        <div class="logo-icon">🌊</div>
+        <span class="logo-text">دریا</span>
+    </a>
+
+    <!-- nav menu -->
+    <nav>
+        <ul>
+            <li><a href="index.html">صفحه اصلی</a></li>
+            <li><a href="menu.html">منو</a></li>
+            <li><a href="about_us.html">درباره ما</a></li>
+            <li><a href="contact_us.html">ارتباط با ما</a></li>
+        </ul>
+    </nav>
+
+    <!-- account & cart icons -->
+    <div class="header-icons">
+        <a href="contact_us.html#reserve" class="btn-reserve">رزرو میز</a>
+        <a href="cart.html" class="icon-btn" aria-label="سبد خرید">
+            <svg viewBox="0 0 24 24">
+                <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+                <line x1="3" y1="6" x2="21" y2="6"/>
+                <path d="M16 10a4 4 0 01-8 0"/>
+            </svg>
+            <span class="cart-badge">۰</span>
+        </a>
+
+        <a href="login.html" class="icon-btn" aria-label="حساب کاربری">
+            <svg viewBox="0 0 24 24">
+                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+            </svg>
+        </a>
+    </div>
+
+    <!-- hamburger button -->
+    <button class="hamburger" id="hamburgerBtn" aria-label="باز کردن منو" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+</header>
+<!-- /header -->
+
+<!-- drawer -->
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <!-- logo -->
+    <div class="mobile-nav-header">
+        <div class="mobile-nav-logo">
+            <div class="logo-icon">🌊</div>
+            <span class="logo-text">اقیانوس</span>
+        </div>
+        <button class="btn-close-nav" onclick="closeMobileNav()" aria-label="بستن منو">&#x2715;</button>
+    </div>
+
+    <!-- menu items -->
+    <ul>
+        <li><a href="index.html" onclick="setActiveNav(this); closeMobileNav()">صفحه اصلی</a></li>
+        <li><a href="menu.html" onclick="setActiveNav(this); closeMobileNav()">منو</a></li>
+        <li class="active-item"><a href="about_us.html" onclick="setActiveNav(this); closeMobileNav()">درباره ما</a></li>
+        <li><a href="contact_us.html" onclick="setActiveNav(this); closeMobileNav()">ارتباط با ما</a></li>
+    </ul>
+
+    <div class="drawer-reserve">
+        <a href="contact_us.html#reserve" class="btn-reserve" onclick="closeMobileNav()">
+            رزرو میز
+        </a>
+    </div>
+    <!-- account & cart icons -->
+    <div class="mobile-nav-icons">
+        <a href="cart.html" class="mobile-icon-item" onclick="closeMobileNav()">
+            <div class="mobile-icon-wrap">
+                <svg viewBox="0 0 24 24">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 01-8 0"/>
+                </svg>
+                <span class="cart-badge-mobile">۰</span>
+            </div>
+            <span>سبد خرید</span>
+        </a>
+        <a href="login.html" class="mobile-icon-item" onclick="closeMobileNav()">
+            <div class="mobile-icon-wrap">
+                <svg viewBox="0 0 24 24">
+                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+                </svg>
+            </div>
+            <span>حساب کاربری</span>
+        </a>
+    </div>
+</div>
+<!-- /drawer-->
+
+<!-- overlay -->
+<div class="nav-overlay" id="navOverlay" onclick="closeMobileNav()"></div>
+
+<!-- ******************** Hero ******************** -->
+<section class="about-hero">
+    <h1>داستان رستوران<span> دریا</span></h1>
+    <p>از دل امواج تا سفره‌ی شما — سال‌هاست که با عشق به طبیعت دریا، بهترین طعم‌های دریایی را برای شما آماده می‌کنیم.</p>
+</section>
+<!-- /hero -->
+
+<!-- ******************** Our story ******************** -->
+<section class="story-section" id="about-content">
+    <div class="story-grid">
+        <!-- Text -->
+        <div class="story-text">
+            <div class="section-label">داستان ما</div>
+            <h2>یک رستوران،<br/><em>هزار طعم دریا</em></h2>
+            <p>
+                رستوران دریا در سال ۱۳۹۳ با یک رویا آغاز شد: آوردن تازه‌ترین غذاهای دریایی از ساحل مستقیم به سفره‌ی مردم. بنیانگذار ما، احمد صابری، با بیش از ۱۲ سال تجربه در آشپزخانه‌های ساحلی ایران و خارج از کشور، تصمیم گرفت رستورانی بسازد که در آن هر بشقاب، داستانی از دریا بگوید.
+            </p>
+            <p>
+                ما از همان روز اول باور داشتیم که کیفیت از منبع شروع می‌شه. به همین دلیل با صیادان محلی، از شمال تا جنوب ایران، همکاری مستقیم داریم و هر روز صبح، تازه‌ترین صید رو دریافت می‌کنیم. هیچ ماهی‌ای در انبار ما بیش از ۲۴ ساعت نمی‌مونه.
+            </p>
+
+            <div class="stats-row">
+                <div class="stat-item">
+                    <span class="stat-num">۱۲+</span>
+                    <div class="stat-label">سال تجربه</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">۸۵+</span>
+                    <div class="stat-label">آیتم منو</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">۴.۹</span>
+                    <div class="stat-label">امتیاز مشتریان</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">۵۰K+</span>
+                    <div class="stat-label">مشتری راضی</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Images -->
+        <div class="story-visuals">
+            <div class="story-img tall">
+                <img src="images/gallery-1.jpg" alt="فضای داخلی رستوران">
+            </div>
+            <div class="story-img short">
+                <img src="images/gallery-2.jpg" alt="فضای بیرونی رستوران">
+            </div>
+            <div class="story-img short">
+                <img src="images/gallery-3.jpg" alt="آشپزخانه رستوران">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /our story -->
+<!-- ******************** Values ******************** -->
+<section class="values-section">
+    <div class="section-label">ارزش‌های ما</div>
+    <h2>چرا دریا را انتخاب کنید؟</h2>
+    <div class="values-grid">
+        <div class="value-card">
+            <div class="value-icon">🐟</div>
+            <h3>تازگی تضمین‌شده</h3>
+            <p>هر روز صبح مستقیم از صیادان محلی دریافت می‌کنیم. هیچ ماهی‌ای بیش از ۲۴ ساعت در آشپزخانه‌ی ما نمی‌مونه.</p>
+        </div>
+        <div class="value-card">
+            <div class="value-icon">👨‍🍳</div>
+            <h3>آشپزان مجرب</h3>
+            <p>تیم آشپزی ما با میانگین ۱۰ سال تجربه در حوزه غذای دریایی، بهترین طعم رو برای شما خلق می‌کنند.</p>
+        </div>
+        <div class="value-card">
+            <div class="value-icon">🌿</div>
+            <h3>مواد اولیه طبیعی</h3>
+            <p>فقط از چاشنی‌ها و مواد اولیه‌ی طبیعی استفاده می‌کنیم. بدون رنگ مصنوعی، بدون نگهدارنده.</p>
+        </div>
+        <div class="value-card">
+            <div class="value-icon">♻️</div>
+            <h3>مسئولیت زیست‌محیطی</h3>
+            <p>با انتخاب آگاهانه از منابع پایدار دریایی، به حفظ اکوسیستم دریا کمک می‌کنیم.</p>
+        </div>
+        <div class="value-card">
+            <div class="value-icon">❤️</div>
+            <h3>تجربه‌ی گرم</h3>
+            <p>هر مشتری برای ما مهمان عزیزیه. از لحظه ورود تا خروج، اطمینان داریم که حس خانه رو دارید.</p>
+        </div>
+        <div class="value-card">
+            <div class="value-icon">🏆</div>
+            <h3>کیفیت بی‌رقیب</h3>
+            <p>برنده‌ی جوایز بهترین رستوران غذای دریایی در ۳ سال متوالی از سوی انجمن رستوران‌داران ایران.</p>
+        </div>
+    </div>
+</section>
+<!-- /values -->
+
+<!-- ******************** Team =====******************** -->
+<section class="team-section">
+    <div class="section-label">تیم ما</div>
+    <h2>افراد پشت این طعم‌ها</h2>
+    <div class="team-grid">
+        <div class="team-card">
+            <div class="team-avatar">
+                <img src="images/chef-1.jpg" alt="">
+            </div>
+            <h4>احمد صابری</h4>
+            <span>سرآشپز و بنیانگذار</span>
+        </div>
+        <div class="team-card">
+            <div class="team-avatar">
+                <img src="images/chef-2.jpg" alt="">
+            </div>
+            <h4>نیلوفر کریمی</h4>
+            <span>سرآشپز دوم</span>
+        </div>
+        <div class="team-card">
+            <div class="team-avatar">
+                <img src="images/manager.jpg" alt="">
+            </div>
+            <h4>رضا موسوی</h4>
+            <span>مدیر رستوران</span>
+        </div>
+        <div class="team-card">
+            <div class="team-avatar">
+                <img src="images/manger-2.jpg" alt="">
+            </div>
+            <h4>مریم احمدی</h4>
+            <span>مدیر تأمین مواد اولیه</span>
+        </div>
+    </div>
+</section>
+<!-- /team -->
+
+<!-- ******************** GALLERY ******************** -->
+<section class="gallery-section" id="gallery">
+    <div class="section-label">گالری</div>
+    <h2>لحظاتی از دریا</h2>
+    <p>فضایی که هر بار باز دیدنش دلتنگی دریا رو یادت میاره</p>
+
+    <!-- Filter Buttons -->
+    <div class="gallery-filters">
+        <button class="filter-btn active" data-filter="all">همه</button>
+        <button class="filter-btn" data-filter="food">غذاها</button>
+        <button class="filter-btn" data-filter="interior">فضای داخلی</button>
+        <button class="filter-btn" data-filter="exterior">فضای خارجی</button>
+        <button class="filter-btn" data-filter="kitchen">آشپزخانه</button>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="gallery-grid" id="galleryGrid">
+        <!-- Row 1 -->
+        <div class="gallery-item wide" data-category="food" onclick="openLightbox(this)">
+            <img src="images/food1.jpg" alt="">
+            <div class="overlay"><img class="gallery-picture" src="images/search.svg" alt=""></div>
+        </div>
+        <div class="gallery-item" data-category="interior" onclick="openLightbox(this)">
+            <img src="images/gallery-1.jpg" alt="">
+            <div class="overlay"><img class="gallery-picture" src="images/search.svg" alt=""></div>
+        </div>
+        <div class="gallery-item tall" data-category="exterior" onclick="openLightbox(this)">
+            <img src="images/gallery-2.jpg" alt="">
+            <div class="overlay"><img class="gallery-picture" src="images/search.svg" alt=""></div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="gallery-item" data-category="food" onclick="openLightbox(this)">
+            <img src="images/food2.jpg" alt="">
+            <div class="overlay"><img class="gallery-picture" src="images/search.svg" alt=""></div>
+        </div>
+        <div class="gallery-item" data-category="kitchen" onclick="openLightbox(this)">
+            <img src="images/gallery-3.jpg" alt="">
+            <div class="overlay"><img class="gallery-picture" src="images/search.svg" alt=""></div>
+        </div>
+        <div class="gallery-item wide" data-category="interior" onclick="openLightbox(this)">
+            <img src="images/inner1.jpg" alt="">
+            <div class="overlay"><img class="gallery-picture" src="images/search.svg" alt=""></div>
+        </div>
+
+        <!-- Row 3 (hidden initially) -->
+        <div class="gallery-item hidden" data-category="food" onclick="openLightbox(this)">
+            <img src="images/food3.jpg" alt="">
+            <div class="overlay"><img class="gallery-picture" src="images/search.svg" alt=""></div>
+        </div>
+        <div class="gallery-item wide hidden" data-category="exterior" onclick="openLightbox(this)">
+            <img src="images/exterior1.jpg" alt="">
+            <div class="overlay"><img class="gallery-picture" src="images/search.svg" alt=""></div>
+        </div>
+        <div class="gallery-item hidden" data-category="kitchen" onclick="openLightbox(this)">
+            <img src="images/kitchen1.jpg" alt="">
+            <div class="overlay"><img class="gallery-picture" src="images/search.svg" alt=""></div>
+        </div>
+        <div class="gallery-item hidden" data-category="food" onclick="openLightbox(this)">
+            <img src="images/food4.jpg" alt="">
+            <div class="overlay"><img class="gallery-picture" src="images/search.svg" alt=""></div>
+        </div>
+    </div>
+
+    <div class="gallery-more">
+        <button class="btn-primary" id="loadMoreBtn" onclick="loadMore()">
+            مشاهده تصاویر بیشتر
+        </button>
+    </div>
+</section>
+<!-- /gallery -->
+
+<!-- ******************** Light box ******************** -->
+<div class="lightbox" id="lightbox">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <div id="lightboxContent"></div>
+</div>
+
+<!-- ******************** Footer ******************** -->
+<footer class="site-footer">
+    <div class="footer-inner">
+        <!-- information -->
+        <div class="footer-col footer-about">
+            <div class="footer-logo">
+                <div class="logo-icon">🌊</div>
+                <span class="logo-text">دریا</span>
+            </div>
+            <p class="footer-desc">
+                تازه‌ترین آبزیان از اعماق دریا، با دستپخت آشپزان مجرب و
+                طعمی فراموش‌نشدنی در کنار شما.
+            </p>
+            <div class="footer-social">
+                <a href="#" class="footer-social-icon">
+                    <img src="images/instagram.svg" alt="اینستاگرام"/>
+                </a>
+                <a href="#" class="footer-social-icon">
+                    <img src="images/telegram.svg" alt="تلگرام"/>
+                </a>
+                <a href="#" class="footer-social-icon">
+                    <img src="images/whatsapp.svg" alt="واتساپ"/>
+                </a>
+            </div>
+        </div>
+        <!-- contact -->
+        <div class="footer-col">
+            <h3 class="footer-title">راه‌های ارتباطی</h3>
+            <div class="footer-info-item">
+                <i class="ti ti-phone" aria-hidden="true"></i>
+                <span>۰۳۱-۳۳۴۴۵۵۶۶</span>
+            </div>
+            <div class="footer-info-item">
+                <i class="ti ti-mail" aria-hidden="true"></i>
+                <span>info@darya-restaurant.ir</span>
+            </div>
+            <div class="footer-info-item">
+                <i class="ti ti-map-pin" aria-hidden="true"></i>
+                <span>اصفهان، چهارباغ بالا</span>
+            </div>
+        </div>
+        <!-- times -->
+        <div class="footer-col">
+            <h3 class="footer-title">ساعات کاری</h3>
+            <div class="footer-hours-item">
+                <span>شنبه تا چهارشنبه</span>
+                <span>۱۲ - ۲۳</span>
+            </div>
+            <div class="footer-hours-item">
+                <span>پنج‌شنبه و جمعه</span>
+                <span>۱۲ - ۲۴</span>
+            </div>
+            <div class="footer-hours-item highlight">
+                <span>تعطیلات رسمی</span>
+                <span>۱۴ - ۲۲</span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © ۱۴۰۳ رستوران دریا — تمامی حقوق محفوظ است
+    </div>
+</footer>
+<!-- /footer -->
+<script src="js/auth.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/about_us.js"></script>
+<script src="https://unpkg.com/feather-icons"></script>
+</body>
+</html>
