@@ -247,16 +247,24 @@ A preview of the main pages and user interfaces of the Seafood Restaurant websit
 
 <br><br>
 
-### 📖 About Us    |    📞 Contact Us
+### 📖 About Us
 
 <img src="./screenshots/About_us.jpg" alt="About Us Page" width="48%">
+
+<br><br>
+
+###  📞 Contact Us
 <img src="./screenshots/Contact_us.jpg" alt="Contact Us Page" width="48%">
 
 <br><br>
 
-### 🔐 Login    |    📝 Sign Up
+### 🔐 Login 
 
 <img src="./screenshots/Login_page.jpg" alt="Login Page" width="48%">
+
+<br><br>
+
+### 📝 Sign Up
 <img src="./screenshots/Signup_page.jpg" alt="Sign Up Page" width="48%">
 
 </div>
